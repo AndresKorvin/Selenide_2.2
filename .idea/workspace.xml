@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7eb61964-b137-4d79-bacf-db2cf0800129" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/SecondTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/PositiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/PositiveTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="7eb61964-b137-4d79-bacf-db2cf0800129" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,8 +80,8 @@
       <command value="gradlew test -Dselenide.headless=true " />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'ru.netology'">
-    <configuration name="PositiveTests.positiveTowns" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.NegativeTest.shouldNotTakeTown">
+    <configuration name="NegativeTest.shouldNotTakeTown" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -99,7 +94,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.PositiveTests.positiveTowns&quot;" />
+            <option value="&quot;ru.netology.NegativeTest.shouldNotTakeTown&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -184,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.NegativeTest.shouldNotTakeTown" />
         <item itemvalue="Gradle.Tests in 'ru.netology'" />
         <item itemvalue="Gradle.SecondTask.mustSelectACityByCalendar" />
         <item itemvalue="Gradle.SecondTask.mustSelectACityByTwoLetters" />
         <item itemvalue="JAR Application.app-card-delivery.jar" />
-        <item itemvalue="Gradle.PositiveTests.positiveTowns" />
       </list>
     </recent_temporary>
   </component>
@@ -213,17 +208,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="NONE" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java</url>
-          <line>22</line>
-          <log-expression expression="    public String setDate(int plusDays) {&#10;        return LocalDate.now().plusDays(plusDays).format(DateTimeFormatter.ofPattern(&quot;dd.MM.yyyy&quot;));&#10;" language="JAVA" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
