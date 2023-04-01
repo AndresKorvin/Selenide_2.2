@@ -80,7 +80,7 @@
       <command value="gradlew test -Dselenide.headless=true " />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.NegativeTest.shouldNotTakeTown">
+  <component name="RunManager" selected="Gradle.PositiveTests.positiveTests">
     <configuration name="NegativeTest.shouldNotTakeTown" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -95,6 +95,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ru.netology.NegativeTest.shouldNotTakeTown&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PositiveTests.positiveTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.PositiveTests.positiveTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -173,17 +196,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="app-card-delivery.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/artifacts/app-card-delivery.jar" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PositiveTests.positiveTests" />
         <item itemvalue="Gradle.NegativeTest.shouldNotTakeTown" />
         <item itemvalue="Gradle.Tests in 'ru.netology'" />
         <item itemvalue="Gradle.SecondTask.mustSelectACityByCalendar" />
         <item itemvalue="Gradle.SecondTask.mustSelectACityByTwoLetters" />
-        <item itemvalue="JAR Application.app-card-delivery.jar" />
       </list>
     </recent_temporary>
   </component>

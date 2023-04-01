@@ -32,8 +32,8 @@ class PositiveTests {
     })
     void positiveTests(String administrativeСenter, int plusDays, String name, String phone) {
 
-//        Configuration.holdBrowserOpen = true;
-        Configuration.headless = true;
+        Configuration.holdBrowserOpen = true;
+//        Configuration.headless = true;
         open("http://localhost:9999/");
 
         $("[data-test-id='city'] .input__control").setValue(administrativeСenter);
@@ -47,4 +47,37 @@ class PositiveTests {
         $("[data-test-id='notification'] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + setDate(plusDays)));
 
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Махачкала", "Донецк", "Магас", "Нальчик", "Элиста", "Черкесск",
+            "Петрозаводск", "Сыктывкар", "Симферополь", "Луганск", "Йошкар-Ола", "Саранск", "Якутск", "Владикавказ",
+            "Казань", "Кызыл", "Ижевск", "Абакан", "Грозный", "Чебоксары", "Барнаул", "Чита", "Петропавловск-Камчатский",
+            "Краснодар", "Красноярск", "Пермь", "Владивосток", "Ставрополь", "Хабаровск", "Благовещенск", "Архангельск",
+            "Астрахань", "Белгород", "Брянск", "Владимир", "Волгоград", "Вологда", "Воронеж", "Мелитополь", "Иваново",
+            "Иркутск", "Калининград", "Калуга", "Кемерово", "Киров", "Кострома", "Курган", "Курск", "Гатчина",
+            "Санкт-Петербург", "Липецк", "Магадан", "Красногорск", "Мурманск", "Нижний Новгород", "Великий Новгород",
+            "Новосибирск", "Омск", "Оренбург", "Орёл", "Пенза", "Псков", "Ростов-на-Дону", "Рязань", "Самара",
+            "Саратов", "Южно-Сахалинск", "Екатеринбург", "Смоленск", "Тамбов", "Тверь", "Томск", "Тула", "Тюмень",
+            "Ульяновск", "Херсон", "Челябинск", "Ярославль", "Москва", "Санкт-Петербург", "Севастополь", "Биробиджан",
+            "Нарьян-Мар", "Ханты-Мансийск", "Анадырь", "Салехард"
+    })
+    void allTownTesting(String administrativeСenter) {
+
+        Configuration.holdBrowserOpen = true;
+        Configuration.headless = true;
+        open("http://localhost:9999/");
+
+        $("[data-test-id='city'] .input__control").setValue(administrativeСenter);
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
+        $("[data-test-id='date'] input").setValue(setDate(3));
+        $("[data-test-id='name'] .input__control").setValue("Имя");
+        $("[data-test-id='phone'] .input__control").setValue("+79999999999");
+        $("[data-test-id='agreement']").click();
+        $("button span.button__text").click();
+        $(".notification__content").shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id='notification'] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + setDate(3)));
+
+    }
+
 }
