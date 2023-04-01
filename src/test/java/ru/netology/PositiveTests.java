@@ -55,7 +55,7 @@ class PositiveTests {
 
     @ParameterizedTest
     @CsvSource({
-            "Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Махачкала", "Донецк", "Магас", "Нальчик", "Элиста", "Черкесск",
+            "Донецк", "Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Махачкала", "Донецк", "Магас", "Нальчик", "Элиста", "Черкесск",
             "Петрозаводск", "Сыктывкар", "Симферополь", "Луганск", "Йошкар-Ола", "Саранск", "Якутск", "Владикавказ", "Казань", "Кызыл",
             "Ижевск", "Абакан", "Грозный", "Чебоксары", "Барнаул", "Чита", "Петропавловск-Камчатский", "Краснодар", "Красноярск", "Пермь",
             "Владивосток", "Ставрополь", "Хабаровск", "Благовещенск", "Архангельск", "Астрахань", "Белгород", "Брянск", "Владимир", "Волгоград",
@@ -75,6 +75,7 @@ class PositiveTests {
         $("[data-test-id='agreement']").click();
         $("button span.button__text").click();
 
+        System.out.println(administrativeСenter);
         $("[data-test-id=city].input_invalid .input__sub").shouldNotBe(visible);
         $(".notification__content").shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id='notification'] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + setDate(3)));
