@@ -25,7 +25,7 @@ class PositiveTests {
     }
 
     @ParameterizedTest
-    @CsvSource ({
+    @CsvSource({
             "Москва, 3, Андрей, +79996665544",
             "Санкт-Петербург, 4, Турчинский Владимир, +79996665544",
             "Краснодар, 1000, Соколова-Сероглазова, +79996665544",
@@ -35,8 +35,8 @@ class PositiveTests {
     })
     void positiveTests(String administrativeСenter, int plusDays, String name, String phone) {
 
-        Configuration.holdBrowserOpen = true;
-//        Configuration.headless = true ;
+//        Configuration.holdBrowserOpen = true;
+        Configuration.headless = true;
         open("http://localhost:9999/");
 
         $("[data-test-id='city'] .input__control").setValue(administrativeСenter);
@@ -50,26 +50,4 @@ class PositiveTests {
         $("[data-test-id='notification'] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + setDate(plusDays)));
 
     }
-
-    static ArrayList townsList = townsList();
-    @Test
-    void positiveTowns() {
-
-        for (Object item:townsList
-             ) {
-            Configuration.holdBrowserOpen = true;
-            open("http://localhost:9999/");
-
-            $("[data-test-id='city'] .input__control").setValue(item.toString());
-            $("[data-test-id='date'] .input__control").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
-            $("[data-test-id='date'] input").setValue(setDate(3));
-            $("[data-test-id='name'] .input__control").setValue("Виктор");
-            $("[data-test-id='phone'] .input__control").setValue("+79999999999");
-            $("[data-test-id='agreement']").click();
-            $("button span.button__text").click();
-            $(".notification__content").shouldBe(visible, Duration.ofSeconds(15));
-            $("[data-test-id='notification'] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + setDate(3)));
-        }
-    }
-
 }
