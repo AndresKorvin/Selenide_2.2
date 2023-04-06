@@ -24,7 +24,7 @@ class PositiveTests {
 
     @BeforeEach
     void setUp() {
-        Configuration.headless = true;
+//        Configuration.headless = true;
 //        Configuration.holdBrowserOpen = true;
         open("http://localhost:9999/");
     }
