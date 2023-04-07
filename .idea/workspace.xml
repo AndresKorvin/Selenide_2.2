@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7eb61964-b137-4d79-bacf-db2cf0800129" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.appveyor.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/PositiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/PositiveTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/SecondTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/SecondTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,18 +60,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "F:/JavaProjects/automated_testing/webInterfaceTesting",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/JavaProjects/automated_testing/webInterfaceTesting&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\JavaProjects\automated_testing\Selenide_2.2" />
@@ -98,8 +94,8 @@
       <command value="gradlew test -Dselenide.headless=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Selenide_2.2 [test]">
-    <configuration name="NegativeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.SecondTask.mustSelectDateByCalendar">
+    <configuration name="SecondTask.dateSelectionForAGivenNumberOfDays" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +108,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.NegativeTest&quot;" />
+            <option value="&quot;ru.netology.SecondTask.dateSelectionForAGivenNumberOfDays&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -122,7 +118,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="NegativeTest.shouldNotTakeTown" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SecondTask.mustSelectACityByTwoLetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +131,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.NegativeTest.shouldNotTakeTown&quot;" />
+            <option value="&quot;ru.netology.SecondTask.mustSelectACityByTwoLetters&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -145,7 +141,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PositiveTests.allTownTesting" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SecondTask.mustSelectDateByCalendar" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +154,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.PositiveTests.allTownTesting&quot;" />
+            <option value="&quot;ru.netology.SecondTask.mustSelectDateByCalendar&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,23 +164,25 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Selenide_2.2 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SecondTask.selectADateAWeekAhead" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="-Dselenide.headless=true" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.SecondTask.selectADateAWeekAhead&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -195,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SecondTask.mustSelectDateByCalendar" />
+        <item itemvalue="Gradle.SecondTask.dateSelectionForAGivenNumberOfDays" />
+        <item itemvalue="Gradle.SecondTask.selectADateAWeekAhead" />
         <item itemvalue="JAR Application.app-card-delivery.jar" />
-        <item itemvalue="Gradle.Selenide_2.2 [test]" />
-        <item itemvalue="Gradle.NegativeTest.shouldNotTakeTown" />
-        <item itemvalue="Gradle.NegativeTest" />
-        <item itemvalue="Gradle.PositiveTests.allTownTesting" />
+        <item itemvalue="Gradle.SecondTask.mustSelectACityByTwoLetters" />
       </list>
     </recent_temporary>
   </component>
