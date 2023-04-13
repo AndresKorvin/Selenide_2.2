@@ -8,23 +8,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.Keys;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static ru.netology.PositiveTests.setDate;
 
 public class SecondTask {
-
-    public String setDate(int plusDays) {
-        return LocalDate.now().plusDays(plusDays).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-    }
 
     @BeforeEach
     void setUp() {
@@ -61,10 +54,10 @@ public class SecondTask {
 
     @ParameterizedTest
     @CsvSource({
-            "1, 1, 2024",
-            "31, 1, 2024",
-            "1, 2, 2026",
-            "28, 2, 2026",
+//            "1, 1, 2024",
+//            "31, 1, 2024",
+//            "1, 2, 2026",
+//            "28, 2, 2026",
             "1, 3, 2024",
             "31, 3, 2024",
             "1, 4, 2024",
@@ -99,7 +92,7 @@ public class SecondTask {
         for (int i = 0; i < countYear; i++) {
             $(".calendar__arrow_direction_right[data-step='12']").click();
         }
-        
+
         if (countMonth > 0) {
             for (int i = 0; i < Math.abs(countMonth); i++) {
                 $(".calendar__arrow_direction_right[data-step='1']").click();

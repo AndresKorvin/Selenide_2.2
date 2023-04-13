@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7eb61964-b137-4d79-bacf-db2cf0800129" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/NegativeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/PositiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/PositiveTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/SecondTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/SecondTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +96,30 @@
       <command value="gradlew test -Dselenide.headless=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.SecondTask.dateSelectionForAGivenNumberOfDays">
+  <component name="RunManager" selected="Gradle.SecondTask.mustSelectDateByCalendar">
+    <configuration name="SecondTask" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.SecondTask&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="SecondTask.dateSelectionForAGivenNumberOfDays" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -109,29 +134,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ru.netology.SecondTask.dateSelectionForAGivenNumberOfDays&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="SecondTask.mustSelectACityByTwoLetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.netology.SecondTask.mustSelectACityByTwoLetters&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SecondTask.dateSelectionForAGivenNumberOfDays" />
         <item itemvalue="Gradle.SecondTask.mustSelectDateByCalendar" />
+        <item itemvalue="Gradle.SecondTask" />
+        <item itemvalue="Gradle.SecondTask.dateSelectionForAGivenNumberOfDays" />
         <item itemvalue="JAR Application.app-card-delivery.jar" />
         <item itemvalue="Gradle.SecondTask.selectADateAWeekAhead" />
-        <item itemvalue="Gradle.SecondTask.mustSelectACityByTwoLetters" />
       </list>
     </recent_temporary>
   </component>
