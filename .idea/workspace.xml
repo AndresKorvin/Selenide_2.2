@@ -94,7 +94,7 @@
       <command value="gradlew test -Dselenide.headless=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.SecondTask.mustSelectDateByCalendar">
+  <component name="RunManager" selected="Gradle.SecondTask.dateSelectionForAGivenNumberOfDays">
     <configuration name="SecondTask.dateSelectionForAGivenNumberOfDays" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -193,10 +193,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SecondTask.mustSelectDateByCalendar" />
         <item itemvalue="Gradle.SecondTask.dateSelectionForAGivenNumberOfDays" />
-        <item itemvalue="Gradle.SecondTask.selectADateAWeekAhead" />
+        <item itemvalue="Gradle.SecondTask.mustSelectDateByCalendar" />
         <item itemvalue="JAR Application.app-card-delivery.jar" />
+        <item itemvalue="Gradle.SecondTask.selectADateAWeekAhead" />
         <item itemvalue="Gradle.SecondTask.mustSelectACityByTwoLetters" />
       </list>
     </recent_temporary>

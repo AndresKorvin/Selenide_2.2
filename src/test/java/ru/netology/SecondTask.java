@@ -12,6 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -60,47 +61,55 @@ public class SecondTask {
 
     @ParameterizedTest
     @CsvSource({
-            "1, 0, 2024",
-            "31, 0, 2024",
             "1, 1, 2024",
-            "28, 1, 2024",
-            "1, 2, 2024",
-            "31, 2, 2024",
+            "31, 1, 2024",
+            "1, 2, 2026",
+            "28, 2, 2026",
             "1, 3, 2024",
-            "30, 3, 2024",
+            "31, 3, 2024",
             "1, 4, 2024",
-            "31, 4, 2024",
+            "30, 4, 2024",
             "1, 5, 2024",
-            "30, 5, 2024",
-            "1, 6, 2023",
-            "31, 6, 2023",
+            "31, 5, 2024",
+            "1, 6, 2024",
+            "30, 6, 2024",
             "1, 7, 2023",
             "31, 7, 2023",
             "1, 8, 2023",
-            "30, 8, 2023",
+            "31, 8, 2023",
             "1, 9, 2023",
-            "31, 9, 2023",
+            "30, 9, 2023",
             "1, 10, 2023",
-            "30, 10, 2023",
+            "31, 10, 2023",
             "1, 11, 2023",
-            "31, 11, 2023",
+            "30, 11, 2023",
+            "1, 12, 2023",
+            "31, 12, 2023",
 
     })
     void mustSelectDateByCalendar(int day, int month, int year) {
-        GregorianCalendar calendar = new GregorianCalendar(year, month, day);
-        DateFormat monthFormat = new SimpleDateFormat("MMMM");
-        DateFormat yearFormat = new SimpleDateFormat("yyyy");
-        DateFormat dmyFormat = new SimpleDateFormat("dd.MM.yyyy");
+        LocalDate targetDate = LocalDate.of(year, month, day);
+        LocalDate now = LocalDate.now();
+        int countMonth = targetDate.getMonthValue() - now.getMonthValue();
+        int countYear = targetDate.getYear() - now.getYear();
 
         $("[data-test-id='city'] .input__control").setValue("Москва");
         $(".icon_name_calendar ").click();
 
-        while (!($(".calendar__name").getText().toLowerCase().contains(monthFormat.format(calendar.getTime())))) {
-            $(".calendar__arrow_direction_right[data-step='1']").click();
-        }
-        while (!($(".calendar__name").getText().toLowerCase().contains(yearFormat.format(calendar.getTime())))) {
+        for (int i = 0; i < countYear; i++) {
             $(".calendar__arrow_direction_right[data-step='12']").click();
         }
+        
+        if (countMonth > 0) {
+            for (int i = 0; i < Math.abs(countMonth); i++) {
+                $(".calendar__arrow_direction_right[data-step='1']").click();
+            }
+        } else if (countMonth < 0) {
+            for (int i = 0; i < Math.abs(countMonth); i++) {
+                $(".calendar__arrow_direction_left[data-step='-1']").click();
+            }
+        }
+
         $$("td").filterBy(Condition.exactText(String.valueOf(day))).first().click();
 
         $("[data-test-id='name'] .input__control").setValue("Имя");
@@ -109,31 +118,35 @@ public class SecondTask {
         $("button span.button__text").click();
         $(".notification__content").shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id='notification'] .notification__content").
-                shouldHave(exactText("Встреча успешно забронирована на " + dmyFormat.format(calendar.getTime())));
+                shouldHave(exactText("Встреча успешно забронирована на " + targetDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))));
 
     }
 
     @Test
     void dateSelectionForAGivenNumberOfDays() {
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.add(Calendar.DAY_OF_YEAR, 7);
-        DateFormat dayFormat = new SimpleDateFormat("d");
-        DateFormat monthFormat = new SimpleDateFormat("MMMM");
-        DateFormat yearFormat = new SimpleDateFormat("yyyy");
-        DateFormat dmyFormat = new SimpleDateFormat("dd.MM.yyyy");
-
+        LocalDate targetDate = LocalDate.now().plusDays(7);
+        LocalDate now = LocalDate.now();
+        int countMonth = targetDate.getMonthValue() - now.getMonthValue();
+        int countYear = targetDate.getYear() - now.getYear();
 
         $("[data-test-id='city'] .input__control").setValue("Москва");
         $(".icon_name_calendar ").click();
 
-        while (!($(".calendar__name").getText().toLowerCase().contains(monthFormat.format(calendar.getTime())))) {
-            $(".calendar__arrow_direction_right[data-step='1']").click();
-        }
-        while (!($(".calendar__name").getText().toLowerCase().contains(yearFormat.format(calendar.getTime())))) {
+        for (int i = 0; i < countYear; i++) {
             $(".calendar__arrow_direction_right[data-step='12']").click();
         }
 
-        $$("td").filterBy(Condition.exactText(dayFormat.format(calendar.getTime()))).first().click();
+        if (countMonth > 0) {
+            for (int i = 0; i < Math.abs(countMonth); i++) {
+                $(".calendar__arrow_direction_right[data-step='1']").click();
+            }
+        } else if (countMonth < 0) {
+            for (int i = 0; i < Math.abs(countMonth); i++) {
+                $(".calendar__arrow_direction_left[data-step='-1']").click();
+            }
+        }
+
+        $$("td").filterBy(Condition.exactText(String.valueOf(targetDate.getDayOfMonth()))).first().click();
 
         $("[data-test-id='name'] .input__control").setValue("Имя");
         $("[data-test-id='phone'] .input__control").setValue("+79996665544");
@@ -141,8 +154,7 @@ public class SecondTask {
         $("button span.button__text").click();
         $(".notification__content").shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id='notification'] .notification__content").
-                shouldHave(exactText("Встреча успешно забронирована на " + dmyFormat.format(calendar.getTime())));
+                shouldHave(exactText("Встреча успешно забронирована на " + targetDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))));
 
     }
-
 }
